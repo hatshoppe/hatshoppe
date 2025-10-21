@@ -4,7 +4,7 @@ description: "Discover the best attractions in our town"
 # baseurl: "/repository-name"  # Your repository name (leave empty if using custom domain)
 # url: "https://username.github.io"  # Your GitHub Pages URL
 baseurl: "/hatshoppe"
-url: "https://username.github.io"
+url: "https://hatshoppe.github.io"
 
 # Collections configuration
 collections:
