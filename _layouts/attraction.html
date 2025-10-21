@@ -1,0 +1,99 @@
+---
+layout: default
+---
+
+<div class="attraction-hero">
+  <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+  <div class="hero-overlay">
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+      {% if page.tagline %}
+        <p class="tagline">{{ page.tagline }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="container attraction-content">
+  <div class="attraction-section">
+    <h2>About</h2>
+    <p>{{ page.description }}</p>
+  </div>
+
+  <div class="attraction-section">
+    <h2>Hours of Operation</h2>
+    <table class="hours-table">
+      <tbody>
+        {% if page.hours.monday %}
+          <tr>
+            <th>Monday</th>
+            <td>{{ page.hours.monday }}</td>
+          </tr>
+        {% endif %}
+        {% if page.hours.tuesday %}
+          <tr>
+            <th>Tuesday</th>
+            <td>{{ page.hours.tuesday }}</td>
+          </tr>
+        {% endif %}
+        {% if page.hours.wednesday %}
+          <tr>
+            <th>Wednesday</th>
+            <td>{{ page.hours.wednesday }}</td>
+          </tr>
+        {% endif %}
+        {% if page.hours.thursday %}
+          <tr>
+            <th>Thursday</th>
+            <td>{{ page.hours.thursday }}</td>
+          </tr>
+        {% endif %}
+        {% if page.hours.friday %}
+          <tr>
+            <th>Friday</th>
+            <td>{{ page.hours.friday }}</td>
+          </tr>
+        {% endif %}
+        {% if page.hours.saturday %}
+          <tr>
+            <th>Saturday</th>
+            <td>{{ page.hours.saturday }}</td>
+          </tr>
+        {% endif %}
+        {% if page.hours.sunday %}
+          <tr>
+            <th>Sunday</th>
+            <td>{{ page.hours.sunday }}</td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-box">
+      <h3>Location</h3>
+      <p>{{ page.location.address }}</p>
+      <p>{{ page.location.city }}, {{ page.location.state }} {{ page.location.zip }}</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Contact</h3>
+      {% if page.contact.phone %}
+        <p><strong>Phone:</strong> {{ page.contact.phone }}</p>
+      {% endif %}
+      {% if page.contact.email %}
+        <p><strong>Email:</strong> <a href="mailto:{{ page.contact.email }}">{{ page.contact.email }}</a></p>
+      {% endif %}
+      {% if page.contact.website %}
+        <p><strong>Website:</strong> <a href="{{ page.contact.website }}" target="_blank" rel="noopener">{{ page.contact.website }}</a></p>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if content != "" %}
+    <div class="attraction-section">
+      {{ content }}
+    </div>
+  {% endif %}
+</div>

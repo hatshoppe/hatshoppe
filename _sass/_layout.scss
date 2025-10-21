@@ -1,0 +1,162 @@
+// Header styles
+.site-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    
+    &:hover {
+      color: rgba(255,255,255,0.9);
+    }
+  }
+}
+
+// Mobile navigation toggle
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  
+  span,
+  span::before,
+  span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 25px;
+    border-radius: 2px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  span::before,
+  span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  span::before {
+    top: -8px;
+  }
+  
+  span::after {
+    top: 8px;
+  }
+}
+
+// Navigation
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  
+  a {
+    color: white;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    
+    &:hover,
+    &.active {
+      border-bottom-color: var(--accent-color);
+    }
+  }
+}
+
+// Mobile styles (< 768px)
+@media (max-width: 767px) {
+  .nav-toggle-label {
+    display: block;
+  }
+  
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 1rem;
+    
+    a {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+  }
+  
+  .nav-toggle:checked ~ .site-nav {
+    display: flex;
+  }
+  
+  .nav-toggle:checked ~ .nav-toggle-label span {
+    background: transparent;
+  }
+  
+  .nav-toggle:checked ~ .nav-toggle-label span::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .nav-toggle:checked ~ .nav-toggle-label span::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+}
+
+// Main content
+main {
+  min-height: calc(100vh - 200px);
+  padding: 2rem 0;
+}
+
+// Footer
+.site-footer {
+  background-color: var(--bg-light);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid var(--border-color);
+  
+  p {
+    margin: 0;
+    color: var(--text-light);
+    text-align: center;
+  }
+}
+
+// Tablet breakpoint (768px+)
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  main {
+    padding: 3rem 0;
+  }
+}
+
+// Desktop breakpoint (1024px+)
+@media (min-width: 1024px) {
+  .site-header {
+    padding: 1.5rem 0;
+  }
+  
+  .site-nav {
+    gap: 2rem;
+  }
+  
+  main {
+    padding: 4rem 0;
+  }
+}

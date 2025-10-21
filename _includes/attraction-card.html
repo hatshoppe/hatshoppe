@@ -1,0 +1,10 @@
+<div class="attraction-card">
+  <img src="{{ include.attraction.image | relative_url }}" alt="{{ include.attraction.title }}">
+  <div class="card-content">
+    <h3>{{ include.attraction.title }}</h3>
+    {% if include.attraction.tagline %}
+      <p class="tagline">{{ include.attraction.tagline }}</p>
+    {% endif %}
+    <a href="{{ include.attraction.url | relative_url }}" class="card-link">Learn More</a>
+  </div>
+</div>

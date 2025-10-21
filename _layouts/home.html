@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="hero">
+  <div class="container">
+    {{ content }}
+  </div>
+</div>
+
+<div class="container">
+  <div class="attractions-grid">
+    {% assign sorted_attractions = site.attractions | sort: 'order' %}
+    {% for attraction in sorted_attractions %}
+      {% include attraction-card.html attraction=attraction %}
+    {% endfor %}
+  </div>
+</div>
